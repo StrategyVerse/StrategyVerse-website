@@ -235,9 +235,12 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 300px;
   background: linear-gradient(135deg, var(--dark) 0%, var(--blue-deeper) 50%, var(--dark-light) 100%);
   overflow: hidden;
 }
+@media (max-width: 992px) { .hero { padding-top: 220px; } }
+@media (max-width: 640px) { .hero { padding-top: 160px; } }
 
 .hero::before {
   content: '';
