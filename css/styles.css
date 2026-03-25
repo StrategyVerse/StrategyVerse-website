@@ -251,12 +251,12 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 300px;
+  padding-top: 120px;
   background: linear-gradient(135deg, var(--dark) 0%, var(--blue-deeper) 50%, var(--dark-light) 100%);
   overflow: hidden;
 }
-@media (max-width: 992px) { .hero { padding-top: 220px; } }
-@media (max-width: 640px) { .hero { padding-top: 160px; } }
+@media (max-width: 992px) { .hero { padding-top: 100px; } }
+@media (max-width: 640px) { .hero { padding-top: 90px; } }
 
 .hero::before {
   content: '';
@@ -315,8 +315,8 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
 .hero-graphic {
   position: absolute;
   right: 4%;
-  top: 55%;
-  transform: translateY(-35%);
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1061,7 +1061,7 @@ section { padding: 100px 0; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 
   .hero-buttons { flex-direction: column; }
-  .hero { min-height: 90vh; padding-top: 100px; }
+  .hero { min-height: 90vh; padding-top: 80px; }
 
   .form-row { grid-template-columns: 1fr; }
 
