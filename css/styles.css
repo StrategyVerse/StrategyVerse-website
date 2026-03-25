@@ -315,8 +315,8 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
 .hero-graphic {
   position: absolute;
   right: 4%;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 55%;
+  transform: translateY(-35%);
   z-index: 1;
   pointer-events: none;
 }
