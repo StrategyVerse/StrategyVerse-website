@@ -55,21 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Contact form handling ---
+  // Form uses FormSubmit.co to email submissions to founder@strategyverse.in
+  // The form's action attribute handles the submission; JS provides UX feedback
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+    contactForm.addEventListener('submit', () => {
       const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Message Sent!';
+      btn.textContent = 'Sending...';
       btn.style.background = '#27ae60';
       btn.style.borderColor = '#27ae60';
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.style.borderColor = '';
-        contactForm.reset();
-      }, 3000);
     });
   }
 
