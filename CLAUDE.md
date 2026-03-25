@@ -108,26 +108,32 @@ StrategyVerse Website/
 │       ├── Shri-RK-Singh-on-CNN-News18.png
 │       └── Shri-RK-Singh-on-NDTV.png
 │
-├── index.html                  # Home page
-├── about.html                  # About Us page
-├── services.html               # Services page
-├── insights.html               # Blog listing page
-├── contact.html                # Contact page
-├── privacy-policy.html         # Privacy Policy (9 clauses)
-├── terms-of-service.html       # Terms of Service (12 clauses)
-│
-├── blog-pitch-slapping.html           # By Praveen Singh
-├── blog-ideation-in-pr.html           # By Praveen Singh
-├── blog-select-pr-agency.html         # By Praveen Singh
-├── blog-service-pr-clients.html       # By Praveen Singh
-├── blog-questioning-in-pr.html        # By Praveen Singh
-├── blog-whats-wrong-pr.html           # By Praveen Singh
-├── blog-truth-press-release.html      # By Praveen Singh
-├── blog-ai-disrupting-pr.html         # By StrategyVerse Content Team
-├── blog-social-media-crisis.html      # By StrategyVerse Content Team
-├── blog-personal-branding-cxo.html    # By StrategyVerse Content Team
-├── blog-startup-pr-mistakes.html      # By StrategyVerse Content Team
-├── blog-earned-vs-paid-media.html     # By StrategyVerse Content Team
+├── index.html                  # Home page (root)
+├── about/
+│   └── index.html              # About Us page → /about/
+├── services/
+│   └── index.html              # Services page → /services/
+├── insights/
+│   └── index.html              # Blog listing page → /insights/
+├── contact/
+│   └── index.html              # Contact page → /contact/
+├── privacy-policy/
+│   └── index.html              # Privacy Policy → /privacy-policy/
+├── terms-of-service/
+│   └── index.html              # Terms of Service → /terms-of-service/
+├── blog/
+│   ├── pitch-slapping/index.html           # By Praveen Singh
+│   ├── ideation-in-pr/index.html           # By Praveen Singh
+│   ├── select-pr-agency/index.html         # By Praveen Singh
+│   ├── service-pr-clients/index.html       # By Praveen Singh
+│   ├── questioning-in-pr/index.html        # By Praveen Singh
+│   ├── whats-wrong-pr/index.html           # By Praveen Singh
+│   ├── truth-press-release/index.html      # By Praveen Singh
+│   ├── ai-disrupting-pr/index.html         # By StrategyVerse Content Team
+│   ├── social-media-crisis/index.html      # By StrategyVerse Content Team
+│   ├── personal-branding-cxo/index.html    # By StrategyVerse Content Team
+│   ├── startup-pr-mistakes/index.html      # By StrategyVerse Content Team
+│   └── earned-vs-paid-media/index.html     # By StrategyVerse Content Team
 │
 ├── .gitignore
 └── CLAUDE.md                   # This file
@@ -152,12 +158,12 @@ StrategyVerse Website/
 | Page | File | Description |
 | ---- | ---- | ----------- |
 | Home | `index.html` | Hero with SVG graphic, services grid (8 services), clientele logos, "Why StrategyVerse" section, testimonials carousel (5 people), CTA |
-| About Us | `about.html` | Company story, mission/vision, values, founder section (Praveen Singh with photo and LinkedIn) |
-| Services | `services.html` | 8 detailed service cards, clientele logos, rolling "Clients in Media" marquee, process section (Discover → Strategise → Execute → Measure) |
-| Insights | `insights.html` | Grid of 12 blog article cards with Pexels images, category tags, read-time estimates |
-| Contact | `contact.html` | Contact form (FormSubmit.co), email/location/hours info, "Book a Call" CTA |
-| Privacy Policy | `privacy-policy.html` | 9-clause privacy policy |
-| Terms of Service | `terms-of-service.html` | 12-clause terms of service |
+| About Us | `about/index.html` | Company story, mission/vision, values, founder section (Praveen Singh with photo and LinkedIn) |
+| Services | `services/index.html` | 8 detailed service cards, clientele logos, rolling "Clients in Media" marquee, process section (Discover → Strategise → Execute → Measure) |
+| Insights | `insights/index.html` | Grid of 12 blog article cards with Pexels images, category tags, read-time estimates |
+| Contact | `contact/index.html` | Contact form (FormSubmit.co), email/location/hours info, "Book a Call" CTA |
+| Privacy Policy | `privacy-policy/index.html` | 9-clause privacy policy |
+| Terms of Service | `terms-of-service/index.html` | 12-clause terms of service |
 
 ### Blog Articles (12 total)
 
@@ -168,6 +174,14 @@ Each blog page uses a consistent template: page-hero with category tag, article 
 ---
 
 ## Key Design Decisions
+
+### Clean URLs
+
+All pages use a folder/index.html pattern for clean URLs (no `.html` in the address bar):
+- `/about/` instead of `about.html`
+- `/blog/pitch-slapping/` instead of `blog-pitch-slapping.html`
+- Asset paths use relative `../` (depth-1) or `../../` (depth-2) prefixes
+- Navigation links are relative to each page's depth in the folder structure
 
 ### Layout
 

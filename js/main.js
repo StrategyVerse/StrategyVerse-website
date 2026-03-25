@@ -46,10 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   // --- Active nav link highlighting ---
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname;
   document.querySelectorAll('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (!href) return;
+    // Resolve the href to an absolute path for comparison
+    const resolved = new URL(href, window.location.href).pathname;
+    // Exact match, or both point to the site root
+    if (resolved === path || resolved === path + '/' || resolved + '/' === path) {
       link.classList.add('active');
     }
   });
