@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.borderColor = '#27ae60';
       btn.disabled = true;
 
-      fetch(contactForm.action, {
+      fetch(contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
         method: 'POST',
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
