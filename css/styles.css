@@ -954,7 +954,7 @@ section { padding: 100px 0; }
   gap: 48px;
   margin-bottom: 48px;
 }
-.footer-brand img { height: 40px; margin-bottom: 16px; }
+.footer-brand img { height: 48px; margin-bottom: 16px; }
 .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
 .footer-col h4 {
   color: var(--white);
