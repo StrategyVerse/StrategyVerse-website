@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // The form's action attribute handles the submission; JS provides UX feedback
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Show success message if redirected back after submission
+    if (new URLSearchParams(window.location.search).get('submitted') === 'true') {
+      contactForm.innerHTML = '<div style="text-align:center;padding:48px 24px;">' +
+        '<div style="font-size:3rem;margin-bottom:16px;color:#27ae60;">&#10003;</div>' +
+        '<h3 style="color:var(--dark);margin-bottom:12px;">Message Sent Successfully!</h3>' +
+        '<p style="color:var(--gray-600);max-width:400px;margin:0 auto;">Thank you for reaching out. We\'ll get back to you within 24 hours.</p>' +
+        '</div>';
+    }
+
     contactForm.addEventListener('submit', () => {
       const btn = contactForm.querySelector('button[type="submit"]');
       btn.textContent = 'Sending...';
