@@ -4,3 +4,12 @@
 *.log
 .DS_Store
 Thumbs.db
+
+# Source material (not deployed)
+Clients/
+Testimonials/
+Insights/
+*.docx
+*.jpg
+!images/**
+Website I like*.jpg
