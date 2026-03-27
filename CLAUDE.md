@@ -135,6 +135,7 @@ StrategyVerse Website/
 │   ├── startup-pr-mistakes/index.html      # By StrategyVerse Content Team
 │   └── earned-vs-paid-media/index.html     # By StrategyVerse Content Team
 │
+├── 404.html                    # Custom 404 page (absolute paths, served from any URL)
 ├── sitemap.xml                 # XML sitemap for search engines (19 URLs)
 ├── robots.txt                  # Crawler rules + sitemap reference
 ├── .gitignore
@@ -166,6 +167,7 @@ StrategyVerse Website/
 | Contact | `contact/index.html` | Contact form (FormSubmit.co), email/location/hours info, "Book a Call" CTA |
 | Privacy Policy | `privacy-policy/index.html` | 9-clause privacy policy |
 | Terms of Service | `terms-of-service/index.html` | 12-clause terms of service |
+| 404 | `404.html` | Custom error page — large 404 heading, redesign explanation, nav links to all main pages. Uses absolute paths (`/css/`, `/images/`) since GitHub Pages serves it from any URL |
 
 ### Blog Articles (12 total)
 
