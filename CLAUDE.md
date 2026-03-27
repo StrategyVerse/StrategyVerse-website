@@ -4,7 +4,7 @@
 
 StrategyVerse Consulting is a **Strategic Public Relations** company based in Noida, India. This is a static HTML/CSS/JS website (no build tools, no frameworks) hosted on **GitHub Pages** at:
 
-**https://strategyverse.github.io/StrategyVerse-website/**
+**https://strategyverse.in** (custom domain, DNS pointed from GitHub Pages)
 
 Repository: `https://github.com/StrategyVerse/StrategyVerse-website`
 
@@ -135,6 +135,8 @@ StrategyVerse Website/
 │   ├── startup-pr-mistakes/index.html      # By StrategyVerse Content Team
 │   └── earned-vs-paid-media/index.html     # By StrategyVerse Content Team
 │
+├── sitemap.xml                 # XML sitemap for search engines (19 URLs)
+├── robots.txt                  # Crawler rules + sitemap reference
 ├── .gitignore
 └── CLAUDE.md                   # This file
 ```
@@ -210,8 +212,11 @@ The hero contains an inline SVG (`viewBox="0 0 500 500"`) with these elements ba
 ### Contact Form
 
 Uses **FormSubmit.co** (serverless form backend):
-- `action="https://formsubmit.co/founder@strategyverse.in"`
-- Hidden fields: subject line, captcha disabled, honeypot spam protection, redirect URL
+- Form action uses a **hashed email** (`37d6b91fe989fa1dc01c98311c49d16d`) instead of plain text to prevent email scraping
+- **AJAX submission** via `fetch()` to the `/ajax/` endpoint — no page refresh
+- On success: form is replaced in-place with a green checkmark and "Message Sent Successfully!" message
+- On error: button resets and an alert is shown
+- Hidden fields: subject line, captcha disabled, honeypot spam protection
 - Fields: first name, last name, email, phone, company, service dropdown, message
 
 ### Testimonials Carousel
@@ -263,7 +268,7 @@ Note: No Twitter or Instagram links are used anywhere on the site (by explicit i
 2. **Mobile hamburger toggle** — opens/closes `.nav-links`, prevents body scroll
 3. **Scroll-reveal** — Intersection Observer on `.reveal` elements (threshold 0.15)
 4. **Active nav highlighting** — matches current URL to nav links
-5. **Contact form UX** — button text changes to "Sending..." with green colour on submit
+5. **Contact form AJAX** — `fetch()` to FormSubmit `/ajax/` endpoint, in-place success message (no page refresh)
 6. **Testimonials carousel** — auto-slide, pause-on-hover, swipe, dots, responsive
 7. **Coverage marquee** — duplicates track items for seamless infinite scroll
 
@@ -282,13 +287,51 @@ Note: No Twitter or Instagram links are used anywhere on the site (by explicit i
 ### Footer
 ```html
 <footer class="footer">
-  Brand column (logo, tagline, LinkedIn)
+  Brand column (logo with overflow-crop at 54px, tagline, LinkedIn)
   Quick Links column
   Services column
   Contact column
   Bottom bar: copyright 2026 | Privacy Policy | Terms of Service
 </footer>
 ```
+
+Footer logo uses the same overflow-crop technique as the navbar but at ~90% of header size (54px visible height, image scaled to 216px with negative margin-top).
+
+---
+
+## SEO
+
+### Sitemap & Robots
+
+- `sitemap.xml` — lists all 19 pages with `<lastmod>`, `<changefreq>`, and `<priority>` values (homepage 1.0, main pages 0.8, blog posts 0.6, legal pages 0.3)
+- `robots.txt` — `User-agent: * Allow: /` with `Sitemap: https://strategyverse.in/sitemap.xml`
+
+### Meta Tags (on every page)
+
+- `<meta charset="UTF-8">` and `<meta name="viewport">`
+- Unique `<title>` (under 60 chars, includes brand name)
+- Unique `<meta name="description">` (under 155 chars)
+- `<meta name="keywords">` — relevant terms per page
+- `<link rel="canonical">` — full canonical URL per page
+
+### Open Graph & Twitter Cards (on every page)
+
+- `og:title`, `og:description`, `og:url`, `og:type`, `og:image`, `og:site_name`
+- `twitter:card` (summary_large_image), `twitter:title`, `twitter:description`, `twitter:image`
+
+### JSON-LD Structured Data
+
+| Page | Schema Type | Details |
+| ---- | ----------- | ------- |
+| Homepage | `Organization` | Business name, URL, logo, address, email, LinkedIn |
+| Services | `ProfessionalService` + `OfferCatalog` | All 8 services listed with descriptions |
+| Contact | `LocalBusiness` | Address, email, opening hours, LinkedIn |
+| Blog posts (12) | `Article` | Headline, author, publisher, dates, image |
+
+### Heading & Image Audit
+
+- Every page has exactly **one `<h1>`** tag with proper `<h2>` / `<h3>` hierarchy
+- Every `<img>` tag has a descriptive `alt` attribute (zero missing or empty)
 
 ---
 
