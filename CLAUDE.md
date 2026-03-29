@@ -135,6 +135,13 @@ StrategyVerse Website/
 │   ├── startup-pr-mistakes/index.html      # By StrategyVerse Content Team
 │   └── earned-vs-paid-media/index.html     # By StrategyVerse Content Team
 │
+├── drafts/
+│   ├── .gitkeep
+│   └── TEMPLATE.html           # Blog post template for scheduled publishing
+├── .github/
+│   └── workflows/
+│       └── publish-drafts.yml  # Daily GitHub Action to auto-publish scheduled posts
+│
 ├── 404.html                    # Custom 404 page (absolute paths, served from any URL)
 ├── sitemap.xml                 # XML sitemap for search engines (19 URLs)
 ├── robots.txt                  # Crawler rules + sitemap reference
@@ -334,6 +341,50 @@ Footer logo uses the same overflow-crop technique as the navbar but at ~90% of h
 
 - Every page has exactly **one `<h1>`** tag with proper `<h2>` / `<h3>` hierarchy
 - Every `<img>` tag has a descriptive `alt` attribute (zero missing or empty)
+
+---
+
+## Scheduled Blog Publishing System
+
+### How It Works
+
+A GitHub Actions workflow (`publish-drafts.yml`) runs daily at **5:30 AM IST** (midnight UTC). It checks the `drafts/` folder for blog posts whose date has arrived and automatically publishes them.
+
+### How to Schedule a Blog Post
+
+1. **Copy the template:** Duplicate `drafts/TEMPLATE.html`
+2. **Name the file:** `YYYY-MM-DD-your-post-slug.html`
+   - Example: `2026-04-15-why-pr-matters.html`
+   - The date is the publish date; the slug becomes the URL (`/blog/why-pr-matters/`)
+3. **Fill in the metadata** in the HTML comment at the top:
+   ```
+   TITLE: Why PR Matters in 2026
+   DESCRIPTION: A compelling summary under 155 characters
+   AUTHOR: Praveen Singh
+   CATEGORY: Strategy
+   READ_TIME: 6 min read
+   IMAGE: https://images.pexels.com/photos/.../photo.jpeg?auto=compress&cs=tinysrgb&w=600
+   IMAGE_ALT: Descriptive alt text
+   KEYWORDS: PR, strategy, 2026
+   ```
+4. **Write the article** content inside the `<article>` section
+5. **Commit and push** the file to the `drafts/` folder
+
+### What the Workflow Does Automatically
+
+- Moves the draft to `blog/<slug>/index.html`
+- Adds a card to the top of the Insights page grid
+- Adds the new URL to `sitemap.xml`
+- Commits and pushes the changes
+
+### Manual Trigger
+
+You can also publish immediately by going to **GitHub → Actions → Publish Scheduled Blog Posts → Run workflow**.
+
+### Files
+
+- `drafts/TEMPLATE.html` — Blog post template with all metadata fields
+- `.github/workflows/publish-drafts.yml` — The GitHub Actions workflow
 
 ---
 

@@ -1,0 +1,145 @@
+name: Publish Scheduled Blog Posts
+
+on:
+  schedule:
+    # Runs daily at 00:00 UTC = 5:30 AM IST
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Publish due drafts
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          echo "Today's date: $TODAY"
+          PUBLISHED=0
+
+          # Find all draft files matching the date pattern
+          for draft in drafts/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*.html; do
+            # Skip if no matches (glob returned literal)
+            [ -e "$draft" ] || continue
+
+            # Skip the template file
+            basename_file=$(basename "$draft")
+            [ "$basename_file" = "TEMPLATE.html" ] && continue
+
+            # Extract the date from filename
+            DRAFT_DATE=$(echo "$basename_file" | grep -oP '^\d{4}-\d{2}-\d{2}')
+            if [ -z "$DRAFT_DATE" ]; then
+              echo "Skipping $draft — no valid date in filename"
+              continue
+            fi
+
+            # Check if the draft date is today or earlier
+            if [ "$DRAFT_DATE" \> "$TODAY" ]; then
+              echo "Skipping $draft — scheduled for $DRAFT_DATE (future)"
+              continue
+            fi
+
+            echo "Publishing $draft (scheduled: $DRAFT_DATE)..."
+
+            # Extract slug from filename (everything after the date)
+            SLUG=$(echo "$basename_file" | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//' | sed 's/\.html$//')
+            echo "  Slug: $SLUG"
+
+            # Extract metadata from HTML comments
+            TITLE=$(grep -oP '^\s*TITLE:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+            DESCRIPTION=$(grep -oP '^\s*DESCRIPTION:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+            AUTHOR=$(grep -oP '^\s*AUTHOR:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+            CATEGORY=$(grep -oP '^\s*CATEGORY:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+            READ_TIME=$(grep -oP '^\s*READ_TIME:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+            IMAGE=$(grep -oP '^\s*IMAGE:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+            IMAGE_ALT=$(grep -oP '^\s*IMAGE_ALT:\s*\K.*' "$draft" | head -1 | sed 's/[[:space:]]*$//')
+
+            echo "  Title: $TITLE"
+            echo "  Author: $AUTHOR"
+            echo "  Category: $CATEGORY"
+
+            # Validate required metadata
+            if [ -z "$TITLE" ] || [ -z "$AUTHOR" ] || [ -z "$CATEGORY" ]; then
+              echo "  ERROR: Missing required metadata (TITLE, AUTHOR, or CATEGORY). Skipping."
+              continue
+            fi
+
+            # --- 1. Move draft to blog folder ---
+            mkdir -p "blog/$SLUG"
+            cp "$draft" "blog/$SLUG/index.html"
+            rm "$draft"
+
+            # --- 2. Add card to insights page (insert at top of grid) ---
+            # Escape special characters for sed
+            TITLE_ESC=$(echo "$TITLE" | sed 's/[&/\]/\\&/g; s/"/\\\&amp;/g')
+            DESC_ESC=$(echo "$DESCRIPTION" | sed 's/[&/\]/\\&/g')
+            IMAGE_ESC=$(echo "$IMAGE" | sed 's/[&/\]/\\&/g')
+            ALT_ESC=$(echo "$IMAGE_ALT" | sed 's/[&/\]/\\&/g')
+            AUTHOR_ESC=$(echo "$AUTHOR" | sed 's/[&/\]/\\&/g')
+            CATEGORY_ESC=$(echo "$CATEGORY" | sed 's/[&/\]/\\&/g')
+            READ_ESC=$(echo "$READ_TIME" | sed 's/[&/\]/\\&/g')
+
+            # Build the insight card HTML
+            CARD=$(cat <<CARD_EOF
+
+            <article class="insight-card reveal">
+              <div class="insight-image">
+                <img src="${IMAGE_ESC}" alt="${ALT_ESC}">
+                <span class="category-tag">${CATEGORY_ESC}</span>
+              </div>
+              <div class="insight-body">
+                <div class="insight-meta">
+                  <span>By ${AUTHOR_ESC}</span>
+                  <span>${READ_ESC}</span>
+                </div>
+                <h3><a href="../blog/${SLUG}/">${TITLE_ESC}</a></h3>
+                <p>${DESC_ESC}</p>
+                <a href="../blog/${SLUG}/" class="read-more">Read More</a>
+              </div>
+            </article>
+          CARD_EOF
+            )
+
+            # Insert the card after the insights-grid opening div
+            # Use a temp file for safe multi-line insertion
+            CARD_FILE=$(mktemp)
+            echo "$CARD" > "$CARD_FILE"
+            sed -i "/<div class=\"insights-grid\">/r $CARD_FILE" insights/index.html
+            rm "$CARD_FILE"
+
+            echo "  Added card to insights page"
+
+            # --- 3. Add entry to sitemap.xml ---
+            SITEMAP_ENTRY="  <url>\n    <loc>https://strategyverse.in/blog/${SLUG}/</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>"
+            sed -i "/<\/urlset>/i\\${SITEMAP_ENTRY}" sitemap.xml
+
+            echo "  Added to sitemap.xml"
+
+            PUBLISHED=$((PUBLISHED + 1))
+          done
+
+          echo ""
+          echo "=== Published $PUBLISHED post(s) ==="
+
+          if [ "$PUBLISHED" -eq 0 ]; then
+            echo "No drafts due for publishing today."
+            exit 0
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "StrategyVerse"
+          git config user.email "founder@strategyverse.in"
+          git add -A
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-publish scheduled blog post(s) — $(date -u +%Y-%m-%d)"
+            git push
+          fi

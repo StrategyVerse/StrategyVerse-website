@@ -1,0 +1,192 @@
+<!--
+  DRAFT BLOG POST TEMPLATE — StrategyVerse
+  ==========================================
+  HOW TO USE:
+  1. Copy this file and rename it: YYYY-MM-DD-your-post-slug.html
+     Example: 2026-04-15-why-pr-matters.html
+  2. Fill in ALL the metadata comments below (the publish script reads them)
+  3. Write your article content in the <article> section
+  4. Commit and push to the drafts/ folder
+  5. The GitHub Action will auto-publish it on the date in the filename
+
+  METADATA (required — the publish script extracts these):
+  TITLE: Your Blog Post Title Here
+  DESCRIPTION: A 1-2 sentence summary for SEO (under 155 characters)
+  AUTHOR: Praveen Singh
+  CATEGORY: Strategy
+  READ_TIME: 8 min read
+  IMAGE: https://images.pexels.com/photos/XXXXXXX/pexels-photo-XXXXXXX.jpeg?auto=compress&cs=tinysrgb&w=600
+  IMAGE_ALT: Descriptive alt text for the thumbnail image
+  KEYWORDS: keyword1, keyword2, keyword3
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUR TITLE HERE — StrategyVerse Consulting</title>
+  <meta name="description" content="YOUR DESCRIPTION HERE">
+  <meta name="keywords" content="YOUR KEYWORDS HERE">
+  <link rel="canonical" href="https://strategyverse.in/blog/YOUR-SLUG/">
+  <meta property="og:title" content="YOUR TITLE HERE — StrategyVerse">
+  <meta property="og:description" content="YOUR DESCRIPTION HERE">
+  <meta property="og:url" content="https://strategyverse.in/blog/YOUR-SLUG/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://strategyverse.in/images/logo-blue.png">
+  <meta property="og:site_name" content="StrategyVerse Consulting">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YOUR TITLE HERE — StrategyVerse">
+  <meta name="twitter:description" content="YOUR DESCRIPTION HERE">
+  <meta name="twitter:image" content="https://strategyverse.in/images/logo-blue.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="icon" type="image/png" href="../../images/favicon-sv.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "YOUR TITLE HERE",
+    "description": "YOUR DESCRIPTION HERE",
+    "author": {
+      "@type": "Person",
+      "name": "YOUR AUTHOR NAME"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "StrategyVerse Consulting",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://strategyverse.in/images/logo-blue.png"
+      }
+    },
+    "datePublished": "YYYY-MM-DD",
+    "dateModified": "YYYY-MM-DD",
+    "image": "https://strategyverse.in/images/logo-blue.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://strategyverse.in/blog/YOUR-SLUG/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="../../" class="nav-logo">
+        <img src="../../images/logo-white.png" alt="StrategyVerse">
+      </a>
+      <div class="nav-links">
+        <a href="../../">Home</a>
+        <a href="../../about/">About Us</a>
+        <a href="../../services/">Services</a>
+        <a href="../../insights/" class="active">Insights</a>
+        <a href="../../contact/" class="nav-cta">Contact Us</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">YOUR CATEGORY</span>
+      <h1>Your Blog Post Title Here</h1>
+      <div class="blog-meta" style="margin-top:12px;opacity:0.85;">
+        <span>By Your Name</span> &nbsp;|&nbsp; <span>DATE</span> &nbsp;|&nbsp; <span>X min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="section">
+    <div class="container">
+      <article class="blog-content" style="max-width:780px;margin:0 auto;">
+        <a href="../../insights/" class="blog-back">Back to Insights</a>
+
+        <!-- WRITE YOUR ARTICLE CONTENT BELOW -->
+
+        <h2>First Section Heading</h2>
+        <p>Your content here...</p>
+
+        <h2>Second Section Heading</h2>
+        <p>More content here...</p>
+
+        <!-- END ARTICLE CONTENT -->
+
+      </article>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a href="../../insights/" class="btn btn-primary btn-arrow">More Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section" style="background: linear-gradient(135deg, var(--dark) 0%, var(--blue-deeper) 100%); color: white; text-align: center;">
+    <div class="container">
+      <h2>Ready to Build Your Brand's Reputation?</h2>
+      <p style="max-width:560px;margin:0 auto 32px;opacity:0.9;">Let's craft a PR strategy that positions your brand as a thought leader in your industry.</p>
+      <a href="../../contact/" class="btn btn-amber btn-arrow">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../" class="footer-logo">
+            <img src="../../images/logo-white.png" alt="StrategyVerse">
+          </a>
+          <p>StrategyVerse is a strategic public relations company helping brands build reputation, not just earn media coverage.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/strategyverse/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../about/">About Us</a></li>
+            <li><a href="../../services/">Services</a></li>
+            <li><a href="../../insights/">Insights</a></li>
+            <li><a href="../../contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../../services/">Communications Strategy</a></li>
+            <li><a href="../../services/">Reputation Management</a></li>
+            <li><a href="../../services/">Crisis Communications</a></li>
+            <li><a href="../../services/">Media Relations</a></li>
+            <li><a href="../../services/">Branding</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>founder@strategyverse.in</p>
+          <p>First Floor, H-54, H Block, Sector 63, Noida - 201309</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 StrategyVerse Consulting. All rights reserved.</p>
+        <div>
+          <a href="../../privacy-policy/">Privacy Policy</a>
+          <a href="../../terms-of-service/">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
