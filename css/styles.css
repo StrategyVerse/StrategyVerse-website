@@ -557,6 +557,17 @@ section { padding: 100px 0; }
   opacity: 1;
   transform: scale(1.08);
 }
+.client-logo[alt="YEStack"] {
+  filter: grayscale(100%) invert(1);
+  opacity: 0.5;
+}
+.client-logo[alt="YEStack"]:hover {
+  filter: grayscale(0%) invert(1);
+  opacity: 0.85;
+}
+.client-logo[alt="Ministry of Power, Government of India"] {
+  height: 70px;
+}
 
 /* ============================================
    MEDIA COVERAGE ROLLING SECTION
