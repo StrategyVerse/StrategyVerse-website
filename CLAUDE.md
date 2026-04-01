@@ -75,18 +75,20 @@ StrategyVerse Website/
 │   ├── logo-white.png          # White logo (used in navbar & footer on dark bg)
 │   ├── logo-blue.png           # Blue logo (used as favicon)
 │   ├── founder-praveen-singh.jpg
-│   ├── clients/                # 11 client logos (PNG/JPG)
+│   ├── clients/                # 13 client logos (PNG/JPG/SVG)
 │   │   ├── Patel-Engineering-Logo.png
 │   │   ├── Mettler_Toledo-Logo.wine_-e1754026397339.png
 │   │   ├── lohum_cleantech_pvt_ltd_logo-e1754026357152.jpg
 │   │   ├── 6389e993c5a15cd75816ef7d_Hubler-home-logo-Rect.png
-│   │   ├── JBM-removebg-preview-e1661173945395.png
 │   │   ├── Manu-Bhoomi-Logo-e1747199312137.png
-│   │   ├── Feedback-Consulting-Final-Logo-e1747199090331.png
 │   │   ├── Logo-main-e1747199299597.png
 │   │   ├── Seed-To-Soul-Logo-01-e1754025868470.png
 │   │   ├── credentiai_logo-e1754026718623.jpg
-│   │   └── MTaI.png
+│   │   ├── MTaI.png
+│   │   ├── SunWheel-Software-Solutions.png
+│   │   ├── Pakka Limited.svg
+│   │   ├── Power Ministry.png
+│   │   └── YEStack.svg
 │   ├── testimonials/           # 5 testimonial portraits
 │   │   ├── Then Powe Minister Mr. RK Singh.jpg
 │   │   ├── Mr. Manu Garg, Founder, Garg Technologies & Concepts.jpg
