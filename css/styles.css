@@ -176,8 +176,8 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
   .nav-logo img { height: 200px; margin-top: -75px; }
 }
 @media (max-width: 640px) {
-  .nav-logo { height: 52px; }
-  .nav-logo img { height: 230px; margin-top: -89px; }
+  .nav-logo { height: 56px; }
+  .nav-logo img { height: 248px; margin-top: -96px; }
 }
 
 .nav-links { display: flex; align-items: center; gap: 36px; }
