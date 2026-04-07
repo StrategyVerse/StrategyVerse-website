@@ -75,30 +75,24 @@ jobs:
             rm "$draft"
 
             # --- 2. Add card to insights page (insert at top of grid) ---
-            # Escape special characters for sed
-            TITLE_ESC=$(echo "$TITLE" | sed 's/[&/\]/\\&/g; s/"/\\\&amp;/g')
-            DESC_ESC=$(echo "$DESCRIPTION" | sed 's/[&/\]/\\&/g')
-            IMAGE_ESC=$(echo "$IMAGE" | sed 's/[&/\]/\\&/g')
-            ALT_ESC=$(echo "$IMAGE_ALT" | sed 's/[&/\]/\\&/g')
-            AUTHOR_ESC=$(echo "$AUTHOR" | sed 's/[&/\]/\\&/g')
-            CATEGORY_ESC=$(echo "$CATEGORY" | sed 's/[&/\]/\\&/g')
-            READ_ESC=$(echo "$READ_TIME" | sed 's/[&/\]/\\&/g')
+            # HTML-encode ampersands in the image URL (sed 'r' command inserts literally, no escaping needed)
+            IMAGE_HTML=$(echo "$IMAGE" | sed 's/&/\&amp;/g')
 
             # Build the insight card HTML
             CARD=$(cat <<CARD_EOF
 
             <article class="insight-card reveal">
               <div class="insight-image">
-                <img src="${IMAGE_ESC}" alt="${ALT_ESC}">
-                <span class="category-tag">${CATEGORY_ESC}</span>
+                <img src="${IMAGE_HTML}" alt="${IMAGE_ALT}">
+                <span class="category-tag">${CATEGORY}</span>
               </div>
               <div class="insight-body">
                 <div class="insight-meta">
-                  <span>By ${AUTHOR_ESC}</span>
-                  <span>${READ_ESC}</span>
+                  <span>By ${AUTHOR}</span>
+                  <span>${READ_TIME}</span>
                 </div>
-                <h3><a href="../blog/${SLUG}/">${TITLE_ESC}</a></h3>
-                <p>${DESC_ESC}</p>
+                <h3><a href="../blog/${SLUG}/">${TITLE}</a></h3>
+                <p>${DESCRIPTION}</p>
                 <a href="../blog/${SLUG}/" class="read-more">Read More</a>
               </div>
             </article>
