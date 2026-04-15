@@ -263,7 +263,7 @@ Each uses an icon (Unicode symbols or inline SVG) in the brand blue colour. The 
 
 ## Contact Information
 
-- **Email:** founder@strategyverse.in
+- **Email:** info@strategyverse.in
 - **Address:** First Floor, H-54, H Block, Sector 63, Noida - 201309
 - **LinkedIn:** https://www.linkedin.com/company/strategyverse/?viewAsMember=true
 - **Founder LinkedIn:** https://www.linkedin.com/in/prwin/
@@ -393,7 +393,7 @@ You can also publish immediately by going to **GitHub → Actions → Publish Sc
 ## Git Configuration
 
 - **User:** StrategyVerse
-- **Email:** founder@strategyverse.in
+- **Email:** info@strategyverse.in
 - **Remote:** https://github.com/StrategyVerse/StrategyVerse-website.git
 - **Branch:** main
 - **Hosting:** GitHub Pages (source: main branch, root `/`)

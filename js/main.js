@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Contact form handling ---
-  // Form uses FormSubmit.co to email submissions to founder@strategyverse.in
+  // Form uses FormSubmit.co to email submissions to info@strategyverse.in
   // The form's action attribute handles the submission; JS provides UX feedback
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {

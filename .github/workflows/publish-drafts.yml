@@ -128,7 +128,7 @@ jobs:
       - name: Commit and push changes
         run: |
           git config user.name "StrategyVerse"
-          git config user.email "founder@strategyverse.in"
+          git config user.email "info@strategyverse.in"
           git add -A
           # Only commit if there are changes
           if git diff --staged --quiet; then
