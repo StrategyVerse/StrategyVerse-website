@@ -59,10 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Contact form handling ---
-  // Form uses FormSubmit.co to email submissions to info@strategyverse.in
-  // The form's action attribute handles the submission; JS provides UX feedback
+  // Form posts via FormSubmit.co. Action is assembled in JS so the email
+  // address never appears as a literal string in the HTML source
+  // (hides it from basic HTML-scraping bots).
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Assemble endpoint: 'info' + '@' + 'strategyverse' + '.' + 'in'
+    const _u = ['info', 'strategyverse', 'in'];
+    const _endpoint = 'https://formsubmit.co/ajax/' + _u[0] + '@' + _u[1] + '.' + _u[2];
+    contactForm.action = _endpoint.replace('/ajax/', '/');
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('button[type="submit"]');
@@ -71,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.borderColor = '#27ae60';
       btn.disabled = true;
 
-      fetch(contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      fetch(_endpoint, {
         method: 'POST',
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
