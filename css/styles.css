@@ -323,13 +323,6 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
 .hero-graphic svg {
   width: 480px;
   height: 480px;
-  animation: heroFloat 12s ease-in-out infinite;
-}
-@keyframes heroFloat {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(10px, -15px) rotate(1deg); }
-  50% { transform: translate(-5px, -25px) rotate(-1deg); }
-  75% { transform: translate(15px, -10px) rotate(0.5deg); }
 }
 
 /* Page-level hero (non-home pages) */
