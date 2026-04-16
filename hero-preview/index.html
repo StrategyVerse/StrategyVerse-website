@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Graphic Preview — StrategyVerse</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f1729;
+      color: #fff;
+      min-height: 100vh;
+    }
+    .page-header {
+      padding: 48px 24px 24px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      color: #adb5bd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    @media (min-width: 1000px) {
+      .options-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .option {
+      background: linear-gradient(135deg, #1a3a5c 0%, #16213e 100%);
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .option-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #F5A623;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .option h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .option-desc {
+      color: #adb5bd;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .graphic-wrap {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .graphic-wrap svg { width: 100%; height: auto; }
+    .back-link {
+      display: block;
+      text-align: center;
+      padding: 32px;
+      color: #377FCC;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>Hero Graphic Preview</h1>
+    <p>Three alternatives to the current hero graphic — each rendered on the same dark hero-style background for accurate comparison. Pick one and I'll swap it into the homepage.</p>
+  </div>
+
+  <div class="options-grid">
+
+    <!-- ============================================================ -->
+    <!-- OPTION 1: ARCHITECTURAL BLUEPRINT                              -->
+    <!-- ============================================================ -->
+    <div class="option">
+      <span class="option-label">Option 1</span>
+      <h3>Architectural Blueprint</h3>
+      <p class="option-desc">Reputation as a structure being built — pillars, foundation, and roof. Direct metaphor for the tagline "Building Reputation." Blueprint aesthetic signals deliberate, planned, measurable work.</p>
+      <div class="graphic-wrap">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Faint blueprint grid -->
+          <defs>
+            <pattern id="bpgrid" width="25" height="25" patternUnits="userSpaceOnUse">
+              <path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(55,127,204,0.08)" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="500" height="500" fill="url(#bpgrid)"/>
+
+          <!-- Foundation bar -->
+          <rect x="60" y="395" width="380" height="12" fill="rgba(55,127,204,0.2)" stroke="rgba(55,127,204,0.5)" stroke-width="1.5"/>
+          <!-- Foundation label -->
+          <text x="250" y="430" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-size="11" letter-spacing="2">FOUNDATION&#160;&#160;&#183;&#160;&#160;TRUST&#160;&#160;&#183;&#160;&#160;PURPOSE</text>
+
+          <!-- Three pillars -->
+          <!-- Pillar 1 -->
+          <rect x="100" y="210" width="36" height="185" fill="rgba(55,127,204,0.1)" stroke="rgba(55,127,204,0.45)" stroke-width="1.5"/>
+          <line x1="100" y1="220" x2="136" y2="220" stroke="rgba(55,127,204,0.35)" stroke-width="1"/>
+          <line x1="100" y1="240" x2="136" y2="240" stroke="rgba(55,127,204,0.25)" stroke-width="1"/>
+          <line x1="100" y1="260" x2="136" y2="260" stroke="rgba(55,127,204,0.25)" stroke-width="1"/>
+          <text x="118" y="320" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.5" transform="rotate(-90 118 320)">MEDIA&#160;RELATIONS</text>
+
+          <!-- Pillar 2 (centre) -->
+          <rect x="232" y="190" width="36" height="205" fill="rgba(245,166,35,0.12)" stroke="rgba(245,166,35,0.5)" stroke-width="1.5"/>
+          <line x1="232" y1="200" x2="268" y2="200" stroke="rgba(245,166,35,0.4)" stroke-width="1"/>
+          <line x1="232" y1="220" x2="268" y2="220" stroke="rgba(245,166,35,0.3)" stroke-width="1"/>
+          <line x1="232" y1="240" x2="268" y2="240" stroke="rgba(245,166,35,0.3)" stroke-width="1"/>
+          <text x="250" y="310" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.5" transform="rotate(-90 250 310)">NARRATIVE</text>
+
+          <!-- Pillar 3 -->
+          <rect x="364" y="210" width="36" height="185" fill="rgba(55,127,204,0.1)" stroke="rgba(55,127,204,0.45)" stroke-width="1.5"/>
+          <line x1="364" y1="220" x2="400" y2="220" stroke="rgba(55,127,204,0.35)" stroke-width="1"/>
+          <line x1="364" y1="240" x2="400" y2="240" stroke="rgba(55,127,204,0.25)" stroke-width="1"/>
+          <line x1="364" y1="260" x2="400" y2="260" stroke="rgba(55,127,204,0.25)" stroke-width="1"/>
+          <text x="382" y="330" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.5" transform="rotate(-90 382 330)">THOUGHT&#160;LEADERSHIP</text>
+
+          <!-- Architrave / horizontal beam -->
+          <rect x="70" y="178" width="360" height="14" fill="rgba(55,127,204,0.18)" stroke="rgba(55,127,204,0.45)" stroke-width="1.5"/>
+
+          <!-- Dome / roof arch -->
+          <path d="M 90 178 Q 250 60 410 178" fill="none" stroke="rgba(55,127,204,0.5)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 110 178 Q 250 80 390 178" fill="none" stroke="rgba(245,166,35,0.3)" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+          <!-- REPUTATION label -->
+          <text x="250" y="130" text-anchor="middle" fill="rgba(255,255,255,0.95)" font-family="Playfair Display,serif" font-size="20" font-weight="700" letter-spacing="4">REPUTATION</text>
+
+          <!-- Dimension line on left -->
+          <line x1="40" y1="85" x2="40" y2="395" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+          <line x1="36" y1="85" x2="44" y2="85" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+          <line x1="36" y1="178" x2="44" y2="178" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+          <line x1="36" y1="395" x2="44" y2="395" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+          <text x="28" y="245" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif" font-size="8" transform="rotate(-90 28 245)">STRATEGIC&#160;DEPTH</text>
+
+          <!-- Construction tick marks along foundation -->
+          <g stroke="rgba(255,255,255,0.18)" stroke-width="0.8">
+            <line x1="80" y1="407" x2="80" y2="413"/>
+            <line x1="140" y1="407" x2="140" y2="413"/>
+            <line x1="200" y1="407" x2="200" y2="413"/>
+            <line x1="260" y1="407" x2="260" y2="413"/>
+            <line x1="320" y1="407" x2="320" y2="413"/>
+            <line x1="380" y1="407" x2="380" y2="413"/>
+            <line x1="420" y1="407" x2="420" y2="413"/>
+          </g>
+
+          <!-- Blueprint title block (bottom right) -->
+          <g transform="translate(340,460)">
+            <rect x="0" y="-18" width="110" height="22" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+            <text x="55" y="-4" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif" font-size="8" letter-spacing="1.5">STRATEGYVERSE&#160;&#183;&#160;v1</text>
+          </g>
+
+          <!-- Compass/scale marker (top right) -->
+          <g transform="translate(440,50)">
+            <circle cx="0" cy="0" r="14" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+            <line x1="0" y1="-14" x2="0" y2="14" stroke="rgba(245,166,35,0.5)" stroke-width="1"/>
+            <line x1="-14" y1="0" x2="14" y2="0" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+            <text x="0" y="-18" text-anchor="middle" fill="rgba(245,166,35,0.6)" font-family="Inter,sans-serif" font-size="8" font-weight="700">N</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- OPTION 3: RADIAL SIGNAL-AND-REACH                              -->
+    <!-- ============================================================ -->
+    <div class="option">
+      <span class="option-label">Option 3</span>
+      <h3>Signal-and-Reach Radial</h3>
+      <p class="option-desc">A brand voice at the centre, reaching layered audiences in concentric rings — from employees out to policy. Communicates strategic reach and framework thinking. Feels like a McKinsey-style diagram.</p>
+      <div class="graphic-wrap">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer rings (audiences) -->
+          <circle cx="250" cy="250" r="210" fill="none" stroke="rgba(55,127,204,0.15)" stroke-width="1" stroke-dasharray="2,4"/>
+          <circle cx="250" cy="250" r="170" fill="none" stroke="rgba(55,127,204,0.2)" stroke-width="1" stroke-dasharray="2,4"/>
+          <circle cx="250" cy="250" r="125" fill="none" stroke="rgba(55,127,204,0.28)" stroke-width="1.2"/>
+          <circle cx="250" cy="250" r="80" fill="none" stroke="rgba(55,127,204,0.4)" stroke-width="1.5"/>
+
+          <!-- Ring labels -->
+          <text x="250" y="50" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif" font-size="9" letter-spacing="2.5">PUBLIC&#160;&#160;&#183;&#160;&#160;POLICY</text>
+          <text x="250" y="90" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">MEDIA</text>
+          <text x="250" y="135" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.5">CLIENTS</text>
+          <text x="250" y="180" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-family="Inter,sans-serif" font-size="9" letter-spacing="1">EMPLOYEES</text>
+
+          <!-- Audience nodes on rings -->
+          <!-- Ring 1 (innermost - employees) -->
+          <circle cx="330" cy="250" r="4" fill="rgba(55,127,204,0.7)"/>
+          <circle cx="170" cy="250" r="4" fill="rgba(55,127,204,0.7)"/>
+          <circle cx="250" cy="330" r="4" fill="rgba(55,127,204,0.7)"/>
+
+          <!-- Ring 2 (clients) -->
+          <circle cx="363" cy="195" r="4.5" fill="rgba(245,166,35,0.65)"/>
+          <circle cx="137" cy="305" r="4.5" fill="rgba(55,127,204,0.65)"/>
+          <circle cx="370" cy="310" r="4.5" fill="rgba(55,127,204,0.65)"/>
+          <circle cx="130" cy="195" r="4.5" fill="rgba(55,127,204,0.65)"/>
+
+          <!-- Ring 3 (media) -->
+          <circle cx="410" cy="225" r="5" fill="rgba(245,166,35,0.55)"/>
+          <circle cx="90" cy="275" r="5" fill="rgba(55,127,204,0.55)"/>
+          <circle cx="285" cy="90" r="5" fill="rgba(55,127,204,0.55)"/>
+          <circle cx="215" cy="410" r="5" fill="rgba(55,127,204,0.55)"/>
+
+          <!-- Ring 4 (public/policy) -->
+          <circle cx="440" cy="290" r="3.5" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="65" cy="225" r="3.5" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="320" cy="445" r="3.5" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="180" cy="55" r="3.5" fill="rgba(255,255,255,0.3)"/>
+
+          <!-- Radiating wave pulses from centre -->
+          <circle cx="250" cy="250" r="40" fill="none" stroke="rgba(245,166,35,0.5)" stroke-width="1.2">
+            <animate attributeName="r" values="40;210;40" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="250" cy="250" r="40" fill="none" stroke="rgba(55,127,204,0.4)" stroke-width="1">
+            <animate attributeName="r" values="40;210;40" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.4;0;0.4" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="250" cy="250" r="40" fill="none" stroke="rgba(55,127,204,0.3)" stroke-width="0.8">
+            <animate attributeName="r" values="40;210;40" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Connecting lines from centre to some nodes (strategic pathways) -->
+          <line x1="250" y1="250" x2="363" y2="195" stroke="rgba(245,166,35,0.2)" stroke-width="0.8" stroke-dasharray="2,3"/>
+          <line x1="250" y1="250" x2="410" y2="225" stroke="rgba(245,166,35,0.15)" stroke-width="0.8" stroke-dasharray="2,3"/>
+          <line x1="250" y1="250" x2="137" y2="305" stroke="rgba(55,127,204,0.2)" stroke-width="0.8" stroke-dasharray="2,3"/>
+          <line x1="250" y1="250" x2="90" y2="275" stroke="rgba(55,127,204,0.15)" stroke-width="0.8" stroke-dasharray="2,3"/>
+          <line x1="250" y1="250" x2="285" y2="90" stroke="rgba(55,127,204,0.2)" stroke-width="0.8" stroke-dasharray="2,3"/>
+          <line x1="250" y1="250" x2="215" y2="410" stroke="rgba(55,127,204,0.2)" stroke-width="0.8" stroke-dasharray="2,3"/>
+
+          <!-- Central brand node -->
+          <circle cx="250" cy="250" r="32" fill="rgba(55,127,204,0.25)" stroke="rgba(55,127,204,0.7)" stroke-width="2"/>
+          <circle cx="250" cy="250" r="18" fill="rgba(245,166,35,0.85)"/>
+          <circle cx="250" cy="250" r="6" fill="#fff"/>
+
+          <!-- Centre label -->
+          <text x="250" y="285" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Playfair Display,serif" font-size="13" font-weight="700" letter-spacing="2">BRAND</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- OPTION 4: ORCHESTRATED WAVEFORMS                               -->
+    <!-- ============================================================ -->
+    <div class="option">
+      <span class="option-label">Option 4</span>
+      <h3>Orchestrated Waveforms</h3>
+      <p class="option-desc">Disparate channel signals on the left — media, social, content, events — converge into a single coherent reputation wave on the right. Shows the coordination work a strategic PR firm does across channels.</p>
+      <div class="graphic-wrap">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Channel labels on left -->
+          <text x="60" y="105" text-anchor="end" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">MEDIA</text>
+          <text x="60" y="205" text-anchor="end" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">SOCIAL</text>
+          <text x="60" y="305" text-anchor="end" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">CONTENT</text>
+          <text x="60" y="405" text-anchor="end" fill="rgba(255,255,255,0.65)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">EVENTS</text>
+
+          <!-- Starting nodes on left -->
+          <circle cx="70" cy="100" r="4" fill="rgba(55,127,204,0.8)"/>
+          <circle cx="70" cy="200" r="4" fill="rgba(245,166,35,0.8)"/>
+          <circle cx="70" cy="300" r="4" fill="rgba(55,127,204,0.8)"/>
+          <circle cx="70" cy="400" r="4" fill="rgba(245,166,35,0.8)"/>
+
+          <!-- Divergent waveforms (start chaotic, different phases/amplitudes) -->
+          <!-- Media wave: high frequency, high amplitude initially -->
+          <path d="M 70 100 Q 90 70 110 100 T 150 100 T 190 100 T 230 110 T 270 140 T 310 180 T 350 220 Q 380 240 400 250 L 430 250"
+                fill="none" stroke="rgba(55,127,204,0.55)" stroke-width="1.8" stroke-linecap="round"/>
+
+          <!-- Social wave: irregular, amber -->
+          <path d="M 70 200 Q 95 175 115 200 T 155 195 Q 180 170 200 205 T 240 215 T 280 225 T 320 240 Q 355 245 380 248 L 430 250"
+                fill="none" stroke="rgba(245,166,35,0.5)" stroke-width="1.8" stroke-linecap="round"/>
+
+          <!-- Content wave: low frequency, medium amplitude -->
+          <path d="M 70 300 Q 110 270 150 305 Q 190 335 230 300 Q 270 275 310 285 Q 350 260 390 250 L 430 250"
+                fill="none" stroke="rgba(55,127,204,0.55)" stroke-width="1.8" stroke-linecap="round"/>
+
+          <!-- Events wave: sparse pulses -->
+          <path d="M 70 400 Q 100 380 130 400 Q 160 420 190 385 Q 220 355 250 360 Q 290 330 330 315 Q 370 275 400 260 L 430 250"
+                fill="none" stroke="rgba(245,166,35,0.5)" stroke-width="1.8" stroke-linecap="round"/>
+
+          <!-- Convergence zone vertical marker -->
+          <line x1="400" y1="60" x2="400" y2="440" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" stroke-dasharray="3,4"/>
+          <text x="400" y="45" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif" font-size="8" letter-spacing="2">CONVERGENCE</text>
+
+          <!-- Combined wave on right (clean, single) -->
+          <path d="M 430 250 Q 440 235 450 250 T 465 250 T 480 250"
+                fill="none" stroke="rgba(245,166,35,0.85)" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- Convergence node -->
+          <circle cx="430" cy="250" r="10" fill="rgba(245,166,35,0.3)" stroke="rgba(245,166,35,0.9)" stroke-width="2">
+            <animate attributeName="r" values="10;14;10" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="430" cy="250" r="4" fill="#F5A623"/>
+
+          <!-- Right-side label -->
+          <text x="465" y="230" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Playfair Display,serif" font-size="12" font-weight="700" letter-spacing="2">REPUTATION</text>
+
+          <!-- Subtle grid lines to separate channel lanes -->
+          <line x1="70" y1="150" x2="395" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+          <line x1="70" y1="250" x2="395" y2="250" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+          <line x1="70" y1="350" x2="395" y2="350" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+
+          <!-- Signal pulse animation travelling along each wave (subtle) -->
+          <circle cx="70" cy="100" r="2.5" fill="rgba(255,255,255,0.6)">
+            <animateMotion dur="3s" repeatCount="indefinite"
+              path="M 0 0 Q 20 -30 40 0 T 80 0 T 120 0 T 160 10 T 200 40 T 240 80 T 280 120 Q 310 140 330 150 L 360 150"/>
+          </circle>
+          <circle cx="70" cy="300" r="2.5" fill="rgba(255,255,255,0.5)">
+            <animateMotion dur="3.5s" begin="0.8s" repeatCount="indefinite"
+              path="M 0 0 Q 40 -30 80 5 Q 120 35 160 0 Q 200 -25 240 -15 Q 280 -40 320 -50 L 360 -50"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="../" class="back-link">&larr; Back to homepage</a>
+</body>
+</html>
