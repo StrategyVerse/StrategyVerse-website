@@ -75,7 +75,7 @@ StrategyVerse Website/
 │   ├── logo-white.png          # White logo (used in navbar & footer on dark bg)
 │   ├── logo-blue.png           # Blue logo (used as favicon)
 │   ├── founder-praveen-singh.jpg
-│   ├── clients/                # 13 client logos (PNG/JPG/SVG)
+│   ├── clients/                # 14 client logos (PNG/JPG/SVG/WEBP)
 │   │   ├── Patel-Engineering-Logo.png
 │   │   ├── Mettler_Toledo-Logo.wine_-e1754026397339.png
 │   │   ├── lohum_cleantech_pvt_ltd_logo-e1754026357152.jpg
@@ -88,6 +88,7 @@ StrategyVerse Website/
 │   │   ├── SunWheel-Software-Solutions.png
 │   │   ├── Pakka Limited.svg
 │   │   ├── Power Ministry.png
+│   │   ├── New-Age-Markets-in-Electricity.webp
 │   │   └── YEStack.svg
 │   ├── testimonials/           # 5 testimonial portraits
 │   │   ├── Then Powe Minister Mr. RK Singh.jpg
