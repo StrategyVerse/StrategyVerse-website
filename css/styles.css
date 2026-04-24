@@ -529,11 +529,11 @@ section { padding: 100px 0; }
 .clients-section.bg-light { background: var(--gray-100); }
 
 .clients-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 40px 48px;
+  gap: 40px 56px;
   margin-top: 48px;
 }
 .client-logo {
@@ -1095,7 +1095,7 @@ section { padding: 100px 0; }
 
   .page-hero { padding: 130px 0 60px; }
 
-  .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 20px; }
+  .clients-grid { gap: 24px 32px; }
   .client-logo { height: 36px; max-width: 100px; }
 
   .blog-hero-img { height: 220px; }
