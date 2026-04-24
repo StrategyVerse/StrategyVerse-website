@@ -562,9 +562,7 @@ section { padding: 100px 0; }
   height: 70px;
 }
 .client-logo[alt="New Age Markets in Electricity"] {
-  background: #1a1a2e;
-  border-radius: 8px;
-  padding: 6px 12px;
+  filter: invert(1);
   height: 50px;
 }
 
