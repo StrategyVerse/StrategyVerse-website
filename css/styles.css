@@ -152,7 +152,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
   padding: 8px 0;
   box-shadow: var(--shadow-md);
 }
-.navbar.scrolled .nav-logo { height: 44px; }
+.navbar.scrolled .nav-logo img { height: 32px; }
 
 .nav-inner {
   display: flex;
@@ -160,24 +160,20 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
   justify-content: space-between;
 }
 
-/* Logo: render large (270px) but crop via container to keep navbar slim */
+/* Logo: display at natural proportions */
 .nav-logo {
-  display: block;
-  height: 60px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 .nav-logo img {
-  height: 270px;
+  height: 40px;
   width: auto;
-  margin-top: -105px; /* vertically centre-crop the logo */
 }
 @media (max-width: 992px) {
-  .nav-logo { height: 50px; }
-  .nav-logo img { height: 200px; margin-top: -75px; }
+  .nav-logo img { height: 36px; }
 }
 @media (max-width: 640px) {
-  .nav-logo { height: 56px; }
-  .nav-logo img { height: 248px; margin-top: -96px; }
+  .nav-logo img { height: 34px; }
 }
 
 .nav-links { display: flex; align-items: center; gap: 36px; }
@@ -974,14 +970,11 @@ section { padding: 100px 0; }
 }
 .footer-brand .footer-logo {
   display: block;
-  height: 54px;
-  overflow: hidden;
   margin-bottom: 16px;
 }
 .footer-brand .footer-logo img {
-  height: 243px;
+  height: 38px;
   width: auto;
-  margin-top: -94px;
 }
 .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
 .footer-col h4 {
