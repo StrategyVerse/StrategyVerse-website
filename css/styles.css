@@ -172,7 +172,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
   .nav-logo img { height: 36px; }
 }
 @media (max-width: 640px) {
-  .nav-logo img { height: 34px; }
+  .nav-logo img { height: 40px; }
 }
 
 .nav-links { display: flex; align-items: center; gap: 36px; }
@@ -974,6 +974,9 @@ section { padding: 100px 0; }
 .footer-brand .footer-logo img {
   height: 38px;
   width: auto;
+}
+@media (max-width: 640px) {
+  .footer-brand .footer-logo img { height: 30px; }
 }
 .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
 .footer-col h4 {
