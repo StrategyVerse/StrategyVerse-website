@@ -860,12 +860,12 @@ section { padding: 100px 0; }
   font-style: italic;
   color: var(--gray-600);
 }
-.blog-article .blog-content a {
+.blog-article .blog-content a:not(.btn) {
   color: var(--blue);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.blog-article .blog-content a:hover {
+.blog-article .blog-content a:not(.btn):hover {
   color: var(--blue-dark);
 }
 .blog-article .blog-content strong {
