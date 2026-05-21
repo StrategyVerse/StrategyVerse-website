@@ -1,5 +1,11 @@
 # StrategyVerse Website — Project Reference
 
+## Standing Rules
+
+- **All new content and changes must be AEO compliant.** This applies to every new blog post, page edit, schema update, and structural change. See the AEO Compliance Checklist section below for what this means in practice.
+
+---
+
 ## Overview
 
 StrategyVerse Consulting is a **Strategic Public Relations** company based in Noida, India. This is a static HTML/CSS/JS website (no build tools, no frameworks) hosted on **GitHub Pages** at:
@@ -388,6 +394,41 @@ You can also publish immediately by going to **GitHub → Actions → Publish Sc
 
 - `drafts/TEMPLATE.html` — Blog post template with all metadata fields
 - `.github/workflows/publish-drafts.yml` — The GitHub Actions workflow
+
+---
+
+## AEO Compliance Checklist
+
+Every new blog post, page, or significant edit **must** satisfy all of the following before publishing.
+
+### Schema (JSON-LD)
+
+- [ ] **Article schema** on every blog post — `headline`, `author` (with `sameAs` LinkedIn URL), `url`, `image` (Pexels hero URL), `datePublished`, `dateModified`, `mainEntityOfPage`
+- [ ] **FAQPage schema** on every blog post — minimum 3 Q&A pairs drawn from the article content
+- [ ] **BreadcrumbList schema** on every blog post — Home → Insights → Article title
+- [ ] **HowTo schema** on any article structured as numbered steps
+- [ ] **Speakable schema** on every blog post — `cssSelector: [".page-hero h1", ".blog-content p:first-child"]`
+- [ ] **og:image / twitter:image** must use the article's Pexels hero image, not the site logo
+
+### Author Attribution
+
+- Articles by **Praveen Singh**: `@type: Person`, `name`, `url: https://strategyverse.in/about/`, `sameAs: https://www.linkedin.com/in/prwin/`, `jobTitle: Founder & Chief Strategist`
+- Articles by **StrategyVerse Content Team**: `@type: Organization`, `name: StrategyVerse Content Team`, `url: https://strategyverse.in`
+
+### On-Page Content
+
+- [ ] One `<h1>` per page, matching the Article schema `headline`
+- [ ] Every `<img>` has a descriptive `alt` attribute
+- [ ] Unique `<title>` (under 60 chars) and `<meta name="description">` (under 155 chars)
+- [ ] `<link rel="canonical">` with the full URL
+
+### Internal Linking
+
+- [ ] Every blog post links to at least 2 other relevant blog posts using contextual anchor text
+
+### Sitemap
+
+- [ ] New blog URL added to `sitemap.xml` with appropriate `<lastmod>`, `<changefreq>` (monthly), and `<priority>` (0.6)
 
 ---
 
