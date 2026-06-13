@@ -69,6 +69,31 @@ section-label → 0.85rem, uppercase, 3px letter-spacing, amber colour
 
 ---
 
+## Blog Cover Illustration Style (Signature House Style)
+
+All blog cover images use a **signature illustration style** unique to StrategyVerse — not stock photos. Every cover must follow this system so the Insights grid reads as one unmistakable visual language.
+
+### The fixed signature (constant on every cover)
+
+- **Medium:** highly detailed scratchboard / wood-engraving illustration in the vintage-etching tradition (Gustave Doré feel) — dense cross-hatching, flowing parallel linework, extreme contrast.
+- **Palette:** monochrome duotone — deep midnight **navy ink (`#1a1a2e`)** on a **warm off-white paper** background (with a thin paper border), never pure black.
+- **The one-amber rule:** exactly **one element glows warm amber (`#F5A623`)** and it is the ONLY colour in the entire frame — the focal "signal/insight." Everything else is navy linework on off-white.
+- **Composition:** a lone figure in a vast, dramatic landscape; epic scale; contemplative, aspirational mood; clean negative space. No text or lettering baked into the image (the page renders the H1 separately).
+
+### What varies: topic-matched metaphor per post
+
+Each article gets its own conceptual scene chosen to fit the topic, drawn in the fixed style above. Examples used: navigation (boat through a maelstrom toward an amber dawn = strategy/turbulence), voice (figure broadcasting through a horn = communications), rising (staircase of books to an amber sun = thought leadership), beacon on a cliff (signal through noise).
+
+### Production
+
+- **Tool/model:** image-generation MCP, model **`flux-2-max`**, aspect ratio **16:9**, PNG/JPG. ~14 credits per image — generate deliberately, don't regenerate idly.
+- **Prompt template:** `Highly detailed scratchboard and wood-engraving illustration in the style of vintage etching and Gustave Doré — dense intricate cross-hatching and fine flowing parallel linework, extreme high contrast, dramatic and cinematic. Monochrome duotone in deep midnight navy ink (color #1a1a2e) on a warm off-white paper background with a thin paper border, NOT pure black. The scene: [TOPIC METAPHOR]. One element — [the amber element] — glows warm amber (color #F5A623) and it is the ONLY color in the entire image; everything else is navy engraved linework on off-white. Epic sense of scale, contemplative and aspirational mood, editorial illustration. No text, no lettering.`
+- **Storage:** save each cover to `images/blog/<slug>.jpg` and reference it locally (replaces the old Pexels URLs).
+- **Per-post references to update:** blog hero `<img>` src + alt, `og:image`, `twitter:image`, Article schema `image`, the Insights card thumbnail in `insights/index.html`, and (for drafts) the `IMAGE:`/`IMAGE_ALT:` metadata comment.
+- **og:image note:** these raster covers double as the social-share image, so no SVG/preview problem.
+
+---
+
 ## Folder Structure
 
 ```
