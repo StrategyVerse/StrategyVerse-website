@@ -1,5 +1,5 @@
-/* ============================================
-   StrategyVerse — Main JavaScript
+﻿/* ============================================
+   Strategyverse — Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
