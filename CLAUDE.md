@@ -1,4 +1,4 @@
-# StrategyVerse Website — Project Reference
+﻿# Strategyverse Website — Project Reference
 
 ## Standing Rules
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-StrategyVerse Consulting is a **Strategic Public Relations** company based in Noida, India. This is a static HTML/CSS/JS website (no build tools, no frameworks) hosted on **GitHub Pages** at:
+Strategyverse Consulting is a **Strategic Public Relations** company based in Noida, India. This is a static HTML/CSS/JS website (no build tools, no frameworks) hosted on **GitHub Pages** at:
 
 **https://strategyverse.in** (custom domain, DNS pointed from GitHub Pages)
 
@@ -71,7 +71,7 @@ section-label → 0.85rem, uppercase, 3px letter-spacing, amber colour
 
 ## Blog Cover Illustration Style (Signature House Style)
 
-All blog cover images use a **signature illustration style** unique to StrategyVerse — not stock photos. Every cover must follow this system so the Insights grid reads as one unmistakable visual language.
+All blog cover images use a **signature illustration style** unique to Strategyverse — not stock photos. Every cover must follow this system so the Insights grid reads as one unmistakable visual language.
 
 ### The fixed signature (constant on every cover)
 
@@ -163,11 +163,11 @@ StrategyVerse Website/
 │   ├── questioning-in-pr/index.html        # By Praveen Singh
 │   ├── whats-wrong-pr/index.html           # By Praveen Singh
 │   ├── truth-press-release/index.html      # By Praveen Singh
-│   ├── ai-disrupting-pr/index.html         # By StrategyVerse Content Team
-│   ├── social-media-crisis/index.html      # By StrategyVerse Content Team
-│   ├── personal-branding-cxo/index.html    # By StrategyVerse Content Team
-│   ├── startup-pr-mistakes/index.html      # By StrategyVerse Content Team
-│   └── earned-vs-paid-media/index.html     # By StrategyVerse Content Team
+│   ├── ai-disrupting-pr/index.html         # By Strategyverse Content Team
+│   ├── social-media-crisis/index.html      # By Strategyverse Content Team
+│   ├── personal-branding-cxo/index.html    # By Strategyverse Content Team
+│   ├── startup-pr-mistakes/index.html      # By Strategyverse Content Team
+│   └── earned-vs-paid-media/index.html     # By Strategyverse Content Team
 │
 ├── drafts/
 │   ├── .gitkeep
@@ -201,7 +201,7 @@ StrategyVerse Website/
 
 | Page | File | Description |
 | ---- | ---- | ----------- |
-| Home | `index.html` | Hero with SVG graphic, services grid (8 services), clientele logos, "Why StrategyVerse" section, testimonials carousel (5 people), CTA |
+| Home | `index.html` | Hero with SVG graphic, services grid (8 services), clientele logos, "Why Strategyverse" section, testimonials carousel (5 people), CTA |
 | About Us | `about/index.html` | Company story, mission/vision, values, founder section (Praveen Singh with photo and LinkedIn) |
 | Services | `services/index.html` | 8 detailed service cards, clientele logos, rolling "Clients in Media" marquee, process section (Discover → Strategise → Execute → Measure) |
 | Insights | `insights/index.html` | Grid of 12 blog article cards with Pexels images, category tags, read-time estimates |
@@ -212,7 +212,7 @@ StrategyVerse Website/
 
 ### Blog Articles (12 total)
 
-7 articles by **Praveen Singh** (founder's original writing) and 5 by **StrategyVerse Content Team** (generated to fill out the insights section on trending PR topics).
+7 articles by **Praveen Singh** (founder's original writing) and 5 by **Strategyverse Content Team** (generated to fill out the insights section on trending PR topics).
 
 Each blog page uses a consistent template: page-hero with category tag, article body with structured headings, a "related articles" or CTA section at the bottom, and the shared navbar/footer.
 
@@ -438,7 +438,7 @@ Every new blog post, page, or significant edit **must** satisfy all of the follo
 ### Author Attribution
 
 - Articles by **Praveen Singh**: `@type: Person`, `name`, `url: https://strategyverse.in/about/`, `sameAs: https://www.linkedin.com/in/prwin/`, `jobTitle: Founder & Chief Strategist`
-- Articles by **StrategyVerse Content Team**: `@type: Organization`, `name: StrategyVerse Content Team`, `url: https://strategyverse.in`
+- Articles by **Strategyverse Content Team**: `@type: Organization`, `name: Strategyverse Content Team`, `url: https://strategyverse.in`
 
 ### On-Page Content
 
