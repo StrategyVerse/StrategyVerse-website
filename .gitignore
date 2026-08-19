@@ -13,3 +13,8 @@ Insights/
 *.jpg
 !images/**
 Website I like*.jpg
+
+# Internal notes and drafts — kept local, not published to the public repo
+CLAUDE.md
+About-me.md.txt
+drafts/
