@@ -59,8 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Contact form handling ---
-  // Form uses FormSubmit.co hashed URL (no email exposed in HTML source).
-  // Submission routes to info@strategyverse.in.
+  // Form posts to Web3Forms (destination email is not exposed in the HTML source).
+  // Submissions route to info@strategyverse.in. Native HTML validation runs first
+  // (no `novalidate`), so this handler only fires once all fields are valid.
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -71,31 +72,33 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.borderColor = '#27ae60';
       btn.disabled = true;
 
-      fetch(contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      }).then((res) => {
-        if (res.ok) {
-          contactForm.innerHTML = '<div style="text-align:center;padding:48px 24px;">' +
-            '<div style="font-size:3rem;margin-bottom:16px;color:#27ae60;">&#10003;</div>' +
-            '<h3 style="color:var(--dark);margin-bottom:12px;">Message Sent Successfully!</h3>' +
-            '<p style="color:var(--gray-600);max-width:400px;margin:0 auto;">Thank you for reaching out. We\'ll get back to you within 24 hours.</p>' +
-            '</div>';
-        } else {
-          btn.textContent = 'Send Message';
-          btn.style.background = '';
-          btn.style.borderColor = '';
-          btn.disabled = false;
-          alert('Something went wrong. Please try again or email us directly.');
-        }
-      }).catch(() => {
+      const resetBtn = () => {
         btn.textContent = 'Send Message';
         btn.style.background = '';
         btn.style.borderColor = '';
         btn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly.');
-      });
+      };
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      }).then((r) => r.json().catch(() => ({})).then((j) => ({ ok: r.ok, j: j })))
+        .then((res) => {
+          if (res.ok && (res.j.success === true || String(res.j.success) === 'true')) {
+            contactForm.innerHTML = '<div style="text-align:center;padding:48px 24px;">' +
+              '<div style="font-size:3rem;margin-bottom:16px;color:#27ae60;">&#10003;</div>' +
+              '<h3 style="color:var(--dark);margin-bottom:12px;">Message Sent Successfully!</h3>' +
+              '<p style="color:var(--gray-600);max-width:400px;margin:0 auto;">Thank you for reaching out. We\'ll get back to you within 24 hours.</p>' +
+              '</div>';
+          } else {
+            resetBtn();
+            alert((res.j && res.j.message) || 'Something went wrong. Please try again or email us at info@strategyverse.in.');
+          }
+        }).catch(() => {
+          resetBtn();
+          alert('Something went wrong. Please try again or email us at info@strategyverse.in.');
+        });
     });
   }
 

@@ -122,11 +122,12 @@
 
         <!-- Contact Form -->
         <div class="reveal">
-          <form class="contact-form" id="contactForm" action="https://formsubmit.co/51692af7dc9518a3d0af6f52ceed4742" method="POST">
-            <input type="hidden" name="_subject" value="New enquiry from Strategyverse website">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://strategyverse.github.io/StrategyVerse-website/contact/?submitted=true">
-            <input type="text" name="_honey" style="display:none">
+          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="9c5d3869-d8ea-4c45-804e-2eece3377c60">
+            <input type="hidden" name="subject" value="New enquiry — strategyverse.in contact form">
+            <input type="hidden" name="from_name" value="Strategyverse website">
+            <!-- Honeypot: real users never see or fill this; Web3Forms rejects it if filled -->
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
             <h3 style="margin-bottom: 24px; color: var(--dark);">Send Us a Message</h3>
             <div class="form-row">
               <div class="form-group">
