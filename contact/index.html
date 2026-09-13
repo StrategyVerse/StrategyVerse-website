@@ -144,18 +144,18 @@
                 <input type="email" id="email" name="email" required placeholder="you@company.com">
               </div>
               <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required pattern="(?=(?:\D*\d){10,15}\D*$)[\d\s\+\-\(\)]+" title="Enter a valid phone number — 10 to 15 digits; +, spaces, hyphens and brackets allowed." placeholder="+91 XXXXX XXXXX">
               </div>
             </div>
             <div class="form-group">
-              <label for="company">Company / Organisation</label>
-              <input type="text" id="company" name="company" placeholder="Your company name">
+              <label for="company">Company / Organisation *</label>
+              <input type="text" id="company" name="company" required placeholder="Your company name">
             </div>
             <div class="form-group">
-              <label for="service">Service You're Interested In</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
+              <label for="service">Service You're Interested In *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service...</option>
                 <option value="communications">Communications Strategy</option>
                 <option value="reputation">Reputation Management</option>
                 <option value="crisis">Crisis Communications</option>
