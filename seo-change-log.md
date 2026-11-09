@@ -15,6 +15,9 @@ Running log of every SEO-related change, per the action plan's ground rules.
 
 | 2026-11-09 | `/services/crisis-communications/` | design retrofit (no copy change) | checklist/icon layout; related links invisible | Persona scenario cards, symbol-free problem/included cards, why-blocks, spaced FAQ, linked related cards (scoped CSS) | Match the improved service-page design and fix related-reading links (global `a{color:inherit}` made them look like plain text). (Phase 2) |
 
+| 2026-11-09 | `/services/communications-strategy/` | new page | — | New Communications Strategy service page (Service + FAQPage + BreadcrumbList schema; persona cards, process steps, why-blocks, scoped CSS) | Target commercial queries (communications strategy consulting / consultant, India) with the approved service-page design. Honest proof — no case studies/client names. (Phase 2.1) |
+| 2026-11-09 | `/services/` + `sitemap.xml` | card link + OfferCatalog url + sitemap entry | card not linked; offer had no url; URL absent | Communications Strategy card links to the new page; `url` added to OfferCatalog offer; sitemap entry added (priority 0.8) | Make the new service page discoverable and crawlable. (Phase 2.1) |
+
 ## Notes / items flagged (no change made)
 - **4 Insights cards still use external Pexels URLs** instead of local signature covers: `service-pr-clients`, `whats-wrong-pr`, `truth-press-release`, `thought-leadership-program`. Inconsistent with the house cover style (CLAUDE.md). Candidate for a later content pass.
 - **`.htaccess`** in repo root is inert on GitHub Pages (Nginx) — safe to delete; left in place pending approval.
