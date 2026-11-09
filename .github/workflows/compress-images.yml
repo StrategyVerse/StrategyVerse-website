@@ -1,0 +1,55 @@
+name: Compress Images
+
+# Auto-compresses images on push so oversized covers never ship to production.
+# - JPEGs: re-encoded to progressive, max quality 82, metadata stripped (visually lossless, ~80% smaller for the blog covers).
+# - PNGs: optimised losslessly (no quality change).
+# Loop-safe: commits made with the default GITHUB_TOKEN do not retrigger workflows,
+# and the commit message carries [skip ci] as a second guard.
+# Idempotent: once images are optimised, later runs produce no changes and no commit.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'images/**'
+      - '.github/workflows/compress-images.yml'
+  workflow_dispatch: # Allow manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compress-images
+  cancel-in-progress: false
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install image tools
+        run: sudo apt-get update && sudo apt-get install -y jpegoptim optipng
+
+      - name: Compress JPEGs (progressive, max quality 82, strip metadata)
+        run: |
+          find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 \
+            | xargs -0 -r jpegoptim --max=82 --strip-all --all-progressive --preserve
+
+      - name: Compress PNGs (lossless)
+        run: |
+          find images -type f -iname '*.png' -print0 \
+            | xargs -0 -r optipng -o2 -strip all
+
+      - name: Commit optimised images
+        run: |
+          git config user.name "StrategyVerse"
+          git config user.email "info@strategyverse.in"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No image changes to commit — images already optimised."
+          else
+            git commit -m "Auto-compress images [skip ci]"
+            git push
+          fi
